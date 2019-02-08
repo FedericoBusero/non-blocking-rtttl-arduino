@@ -171,6 +171,10 @@ class Player {
 			this->defaultOctave = 6;
 			this->bpm = 63;
 			this->silent = true;
+			this->periodStart = 0;
+			this->periodLength = 0;
+			this->wholenote = 0;
+			this->transposeOctaves = 0;
 		}
 						
 		void transpose(int octaves){
@@ -549,7 +553,7 @@ class ConstPlayer: public Player{
 	public:
 
 		ConstPlayer(uint8_t tonePin)
-			:Player(tonePin) //call superclass constructor
+			:Player(tonePin), songStart(NULL) //call superclass constructor
 		{
 			//do nothing
 		}
