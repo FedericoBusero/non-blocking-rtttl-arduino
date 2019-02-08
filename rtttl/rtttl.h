@@ -359,7 +359,25 @@ class Player {
 		bool isSilent(){
 			return silent;
 		}
-		
+	
+		void getName(char *songname, int maxlength)
+		{
+			for (int count = 0; count < maxlength; ++count)
+			{
+				char b = get_byte(count);
+				if (b == ':')
+				{
+					b = (char)0;
+				}
+				songname[count] = b;
+				if (!b)
+				{
+					return;
+				}
+			}
+			songname[maxlength]='\0';
+		}
+	
 	private:
 
 
