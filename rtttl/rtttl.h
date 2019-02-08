@@ -319,7 +319,7 @@ class Player {
 		/** Plays the whole tune, blocking until it is finished. */
 		void finishSong(){
 			while(this->stepSong()){
-				//do nothing
+				delay(1);
 			}
 		}
 		
