@@ -30,7 +30,47 @@
 #define STEP_REST 3
 
 const uint16_t notes[] PROGMEM =
-{	0, //
+{	NOTE_B0, //
+
+ 	NOTE_C1, //
+ 	NOTE_CS1, //
+	NOTE_D1, //
+	NOTE_DS1, //
+	NOTE_E1, //
+	NOTE_F1, //
+	NOTE_FS1, //
+	NOTE_G1, //
+	NOTE_GS1, //
+	NOTE_A1, //
+	NOTE_AS1, //
+	NOTE_B1, //
+  
+	NOTE_C2, //
+	NOTE_CS2, //
+	NOTE_D2, //
+	NOTE_DS2, //
+	NOTE_E2, //
+	NOTE_F2, //
+	NOTE_FS2, //
+	NOTE_G2, //
+	NOTE_GS2, //
+	NOTE_A2, //
+	NOTE_AS2, //
+	NOTE_B2, //
+
+	NOTE_C3, //
+	NOTE_CS3, //
+	NOTE_D3, //
+	NOTE_DS3, //
+	NOTE_E3, //
+	NOTE_F3, //
+	NOTE_FS3, //
+	NOTE_G3, //
+	NOTE_GS3, //
+	NOTE_A3, //
+	NOTE_AS3, //
+	NOTE_B3, //
+
 	NOTE_C4, //
 	NOTE_CS4, //
 	NOTE_D4, //
@@ -460,7 +500,7 @@ class Player {
 
 			if (note)
 			{
-				uint16_t note_word = pgm_read_word(&notes[(scale - 4) * 12 + note]);
+				uint16_t note_word = pgm_read_word(&notes[(scale - 1) * 12 + note]);
 				_tone(note_word);
 				//Serial.print("Playing note: ");
 				//Serial.println(note_word);
