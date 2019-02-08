@@ -197,6 +197,14 @@ class Player {
 			periodStart = -1;
 			nextPos = 0;
 			
+			// Initialise the player again (keep transposeOctaves)
+			this->defaultNoteDenominator = 4;
+			this->defaultOctave = 6;
+			this->bpm = 63;
+			this->silent = true;
+			this->periodLength = 0;
+			this->wholenote = 0;
+			
 			// format: d=N,o=N,b=NNN:
 			// find the start (skip name, etc)
 
