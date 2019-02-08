@@ -201,6 +201,10 @@ class Player {
 			// find the start (skip name, etc)
 
 			while (peek_byte() != ':'){
+				if (!peek_byte())
+				{
+					return false;
+				}
 				pop_byte(); //(ignore name characters)
 			}
 						
@@ -578,7 +582,14 @@ class ProgmemPlayer: public ConstPlayer{
 	private:
 		char get_byte(int pos)
 		{
-			return pgm_read_byte(songStart + pos);
+			if (songStart)
+			{
+				return pgm_read_byte(songStart + pos);
+			}
+			else
+			{
+				return 0;
+			}
 		}
 
 };
@@ -596,7 +607,13 @@ class RamPlayer: public ConstPlayer{
 	private:
 		char get_byte(int pos)
 		{
-			return *(songStart + pos);
+			if (songStart)
+			{
+				return *(songStart + pos);
+			}
+			else
+			{
+				return 0;
+			}
 		}
-
 };
